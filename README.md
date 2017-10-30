@@ -1,5 +1,5 @@
 # Decensooru
-Addon userscript for [Better Better Booru][1] to reveal hidden content on Danbooru. BBB from the [hidden-update-cleanup][2] branch must be installed and all 'placeholder' options should be enabled in BBB settings.
+Addon userscript for [Better Better Booru][1] to reveal hidden content on Danbooru. BBB from the [hidden-update-cleanup][2] branch must be installed and the 'placeholder' options for all desired hidden content must be enabled in BBB settings.
 
 ## Usage
 This tool requires a bit of setup and modification of BBB code in two places:
