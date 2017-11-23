@@ -1,5 +1,5 @@
 # Decensooru
-Addon userscript for [Better Better Booru](https://github.com/pseudonymous/better-better-booru) v.8.0+ for revealing hidden content on Danbooru. The 'placeholder' options for all desired hidden content must be enabled in BBB settings.
+Addon userscript for [Better Better Booru](https://github.com/pseudonymous/better-better-booru) v.8.0+ for revealing hidden content on Danbooru.
 
 ## Usage
 This tool requires a bit of setup and modification of BBB code in two places:
@@ -28,7 +28,6 @@ if (postInfo['md5'] == ""){
 	}
 }
 ```
+3. Enable the 'placeholder' options for all desired hidden content in BBB settings.
 
-Decensooru occasionally (including upon the first start) pulls update batches and stores them in localstorage. You will be notified when this happens by a text box in the top right corner. Your browser may freeze for up to 30 seconds when the full batch is pulled. When it is done, refresh any pages and magic should happen. If anything remains hidden, it's likely not in a batch yet. Retry tomorrow and fap to something else in the meantime. If any post older than a day is still hidden, something went wrong and you should contact me.
-
-This tool is built by one person who is not very experienced in JS and barely tested, so I'll be more surprised if everything works perfectly than if it doesn't. The issues tab is up there.
+Decensooru occasionally (including upon the first start) pulls update batches and stores them in localstorage. You will be notified when this happens by a text box in the top right corner. Your browser may freeze for up to 30 seconds when the full batch is pulled (note that this happens only upon the initial load and when you're severely out of date). When it is done, refresh any pages and magic should happen. If anything remains hidden, it's likely not in a batch yet. Retry tomorrow and fap to something else in the meantime. If any post older than a day is still hidden, something went wrong and you should contact me.
