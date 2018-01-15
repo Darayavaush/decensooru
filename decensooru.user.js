@@ -11,7 +11,7 @@
 // ==/UserScript==
 
 (function(){
-    console.log('Decensooru started.');
+    console.log('Decensooru started. There are ' + unsafeWindow.localStorage.length + ' items in DB.');
     var lastUpdate = GM_getValue('lastUpdate', 0);
     if (Date.now() - lastUpdate < 28800000){  // 8 hours
         console.log('Nothing to do, wait for next batch.');
