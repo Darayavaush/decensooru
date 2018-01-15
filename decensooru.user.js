@@ -11,6 +11,7 @@
 // ==/UserScript==
 
 (function(){
+    console.log('Decensooru started.');
     var lastUpdate = GM_getValue('lastUpdate', 0);
     if (Date.now() - lastUpdate < 28800000){  // 8 hours
         console.log('Nothing to do, wait for next batch.');
@@ -27,6 +28,7 @@
         method: "GET",
         url: "https://f001.backblazeb2.com/file/decensooru-batches/" + (need_full_batch ? 0 : 1),
         onload: function(response) {
+            notice.textContent = "Batch pulled, storing…";
             var str = response.responseText;
             var output = [];
             for (var i = 0, len = str.length; i < len; i++) {
