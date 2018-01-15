@@ -3,7 +3,7 @@ Addon userscript for [Better Better Booru](https://github.com/pseudonymous/bette
 
 ## Usage
 This tool requires a bit of setup and modification of BBB code.
-1. Install decensooru.user.js (gm4 version if you have Greasemonkey 4 on FF57+, normal one otherwise (including Tampermonkey and Violentmonkey)).
+1. Install decensooru.user.js (gm4 version if you have Greasemonkey 4 on FF57+, normal one for any other combination (including Tampermonkey and Violentmonkey)).
 2. Locate the line `var xml = parseJson(xmlhttp.responseText, {});` in function `fetchJSON` (line 699). Immediately after it, add the following:
 ```javascript
 for (var i = 0, len = xml.length; i < len; i++) {
