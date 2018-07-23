@@ -21,7 +21,7 @@ for (var i = 0, len = xml.length; i < len; i++) {
 ```javascript
 if (postInfo['md5'] == ""){
 	var md5_ext = window.localStorage.getItem(postInfo['id']);
-	postInfo['file_img_src'] = postInfo['file_url'] = (postInfo['id'] < 1000000 ? "/cached" : "") + "/data/" + md5_ext;
+	postInfo['file_img_src'] = postInfo['file_url'] = (postInfo['id'] < 1000000 ? "/cached" : "") + "/data//" + md5_ext;
 	if (postInfo.file_ext === "zip"){
 		load_sample_first = true;
 		md5_ext = md5_ext.split('.');
