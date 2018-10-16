@@ -12,8 +12,9 @@ for (var i = 0, len = xml.length; i < len; i++) {
 		if (md5_ext == null)
 			continue;
 		md5_ext = md5_ext.split('.');
-		xml[i]['md5'] = md5_ext[0];
-		xml[i]['preview_file_url'] = "/data/preview/" + md5_ext[0] + ".jpg";
+		let md5 = md5_ext[0];
+		xml[i]['md5'] = md5;
+		xml[i]['preview_file_url'] = "https://raikou4.donmai.us/preview/" + md5[0] + md5[1] + "/" + md5[2] + md5[3] + "/" + md5 + ".jpg";
 	}
 }
 ```
