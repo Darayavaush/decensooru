@@ -16,12 +16,28 @@
     setTimeout(function(){
         $("#image").on("error", function(){
             var src = $("#image").attr("src");
+<<<<<<< HEAD
+            //var split = src.split();
+            src = src.split('/');
+            src = src[src.length-1];
+            $("#image").attr("src", "https://raikou2.donmai.us/" + src[0] + src[1] + "/" + src[2] + src[3] + "/" + src); 
+            //$("#image").attr("src", "https://hijiribe.donmai.us/data//" + src).on("error", function(){
+            //   $("#image").attr("src", "https://raikou2.donmai.us/" + src[0] + src[1] + "/" + src[2] + src[3] + "/" + src); ; 
+            //});
+        });
+     }, 0);
+
+    $('#page-footer').append('– <a id="decensooruForceFullRefresh">Force full refresh of Decensooru</a>'); 
+    $('#decensooruForceFullRefresh').click(function(){refresh(1);})
+
+=======
             src = src.split('/');
             src = src[src.length-1];
             $("#image").attr("src", "https://raikou2.donmai.us/" + src[0] + src[1] + "/" + src[2] + src[3] + "/" + src); 
         });
      }, 0);
     
+>>>>>>> origin/master
     console.log('Decensooru started. There are ' + unsafeWindow.localStorage.length + ' items in DB');
     var lastUpdate = GM_getValue('lastUpdate', 0);
     if (Date.now() - lastUpdate < 28800000){  // 8 hours
@@ -30,6 +46,11 @@
     }
     GM_setValue('lastUpdate', Date.now());
     var need_full_batch = (Date.now() - lastUpdate > 259200000);  // 4 days
+    refresh(need_full_batch);
+    
+})();
+
+function refresh(need_full_batch){
     var notice = document.createElement('div');
     notice.textContent = "Decensooru is pulling a " + (need_full_batch ? "full" : "partial") + " batch…";
     notice.setAttribute('style', 'position:fixed; right:0; top:0; background: white; border:black solid 1px; font-size:18px; font-family:arial; padding:2px 10px; color: black !important; font-weight: bold');
@@ -55,5 +76,9 @@
             notice.textContent = "Done.";
             setTimeout(function(){ notice.parentNode.removeChild(notice); }, 3000);
         }});
+<<<<<<< HEAD
+}
+=======
     
 })();
+>>>>>>> origin/master
