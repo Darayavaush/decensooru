@@ -16,7 +16,6 @@
     setTimeout(function(){
         $("#image").on("error", function(){
             var src = $("#image").attr("src");
-<<<<<<< HEAD
             //var split = src.split();
             src = src.split('/');
             src = src[src.length-1];
@@ -30,14 +29,6 @@
     $('#page-footer').append('– <a id="decensooruForceFullRefresh">Force full refresh of Decensooru</a>'); 
     $('#decensooruForceFullRefresh').click(function(){refresh(1);})
 
-=======
-            src = src.split('/');
-            src = src[src.length-1];
-            $("#image").attr("src", "https://raikou2.donmai.us/" + src[0] + src[1] + "/" + src[2] + src[3] + "/" + src); 
-        });
-     }, 0);
-    
->>>>>>> origin/master
     console.log('Decensooru started. There are ' + unsafeWindow.localStorage.length + ' items in DB');
     var lastUpdate = GM_getValue('lastUpdate', 0);
     if (Date.now() - lastUpdate < 28800000){  // 8 hours
@@ -60,6 +51,7 @@ function refresh(need_full_batch){
         method: "GET",
         url: "https://f001.backblazeb2.com/file/decensooru-batches/" + (need_full_batch ? 0 : 1),
         onload: function(response) {
+            notice.textContent = "Batch pulled, storing…";
             var str = response.responseText;
             var output = [];
             for (var i = 0, len = str.length; i < len; i++) {
@@ -76,9 +68,4 @@ function refresh(need_full_batch){
             notice.textContent = "Done.";
             setTimeout(function(){ notice.parentNode.removeChild(notice); }, 3000);
         }});
-<<<<<<< HEAD
 }
-=======
-    
-})();
->>>>>>> origin/master
