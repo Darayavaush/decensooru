@@ -4,9 +4,10 @@ Addon userscript for [Better Better Booru](https://github.com/pseudonymous/bette
 ## Usage
 This tool requires a bit of setup and modification of BBB code.
 1. Install decensooru.user.js (gm4 version if you have Greasemonkey 4 on FF57+, normal one for any other combination (including Tampermonkey and Violentmonkey)).
-2. In BBB, locate the line `var xml = parseJson(xmlhttp.responseText, {});` in function `fetchJSON` (line 699). Immediately after it, add the following:
+2. In BBB, locate the line `var xml = parseJson(xmlhttp.responseText, {});` in function `fetchJSON` (line 748 as of this writing). Immediately after it, add the following (indentation doesn't matter):
 ```javascript
 for (var i = 0, len = xml.length; i < len; i++) {
+	console.log("Working on thumbnails.");
 	if (typeof xml[i]['md5'] === 'undefined'){
 		var md5_ext = window.localStorage.getItem(xml[i]['id']);
 		if (md5_ext == null)
@@ -18,9 +19,10 @@ for (var i = 0, len = xml.length; i < len; i++) {
 	}
 }
 ```
-3. Locate the line `var postInfo = bbb.post.info = document.bbbInfo();` in function `parsePost` (line 804). Immediately after it, add the following:
+3. Locate the line `var postInfo = bbb.post.info = document.bbbInfo();` in function `parsePost` (line 857 as of this writing). Immediately after it, add the following:
 ```javascript
 if (postInfo['md5'] == ""){
+	console.log("Working on the full image.");
 	var md5_ext = window.localStorage.getItem(postInfo['id']);
 	postInfo['file_img_src'] = postInfo['file_url'] = (postInfo['id'] < 1000000 ? "/cached" : "") + "/data//" + md5_ext;
 	if (postInfo.file_ext === "zip"){
