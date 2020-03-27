@@ -34,8 +34,8 @@ if (postInfo['md5'] == ""){
 	}
 }
 ```
-4. Immediately after this block, there is a line `var imgContainer = document.getElementById("image-container");`. Replace it with `var imgContainer = document.getElementById("image-container") || document.getElementsByClassName("image-container")[0];`
-5. Locate the line `var imgContainer = getId("image-container", target);` in function `getPostContent` (line 1631 as of this writing). Replace it with the following: `var imgContainer = getId("image-container", target) || document.getElementsByClassName("image-container")[0];`
+4. Immediately after this block, there is a line `var imgContainer = document.getElementById("image-container");`. Replace it with `var imgContainer = document.getElementsByClassName("image-container")[0];`
+5. Locate the line `var imgContainer = getId("image-container", target);` in function `getPostContent` (line 1631 as of this writing). Replace it with the following: `var imgContainer = document.getElementsByClassName("image-container")[0];`
 6. Enable the 'placeholder' options for all desired hidden content in BBB settings.
 
 Decensooru occasionally (including upon the first start) pulls update batches and stores them in localstorage. You will be notified when this happens by a text box in the top right corner. Your browser may freeze for up to 30 seconds when the full batch is pulled (this only happens upon the initial load and when you're severely out of date). When it is done, refresh any pages and magic should happen. If anything remains hidden, it's likely not in a batch yet. Retry tomorrow and fap to something else in the meantime. If any post older than a day is still hidden, something went wrong and you should contact me.
