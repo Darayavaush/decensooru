@@ -1,7 +1,14 @@
-# Decensooru
-Addon userscript for [Better Better Booru](https://github.com/pseudonymous/better-better-booru) v.8.0+ for revealing hidden content on Danbooru.
+# Decensooru [RIP 10.2017-7.2020]
 
-**Update 2020.7.16**: the fucking assholes broke us once again, this time intentionally. Hang tight while I think up a solution.
+So, this is the end of the road, boys. While the current version of the block on Danbooru's side is bypassable with relatively little headache, the greedy fucks have threatened to remove the banned results from non-gold searches entirely, which would throw a massive wrench into everything. Now, it would still be possible to make Decensooru work even then (though with a few asterisks), doing so would complicate the project massively and use far too much of my time that I'm not willing to spend, and as hilarious as it would be watching the aforementioned greedy fucks damage their own site for the sake of preventing the few dozen Decensooru users from viewing the sweet, sweet banned content, I think the benefit to the greater good of not stirring the hornets' nest and allowing people to run their own private Decensoorus on the current version would outweigh this short-lived burst of gloating satisfaction. Therefore, I recommend you to migrate to sites not run by people whose eyebrows is the highest point on their heads.
+
+(Though it should be noted that the module responsible for showing individual images from the post pages (_not_ search pages) still works (though I don't think many people will benefit from this in their fapflow) and I will continue updating batches for the foreseeable future (it's automated anyway))
+
+---
+
+Old readme:
+
+Addon userscript for [Better Better Booru](https://github.com/pseudonymous/better-better-booru) v.8.0+ for revealing hidden content on Danbooru.
 
 ## Usage
 1. Install decensooru.user.js (gm4 version if you have Greasemonkey 4 on FF57+, normal one for any other combination (including Tampermonkey and Violentmonkey)).
